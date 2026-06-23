@@ -131,6 +131,35 @@ img {
   background: var(--navy);
 }
 
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(105deg, rgba(16, 35, 55, 0.96), rgba(16, 35, 55, 0.74)),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1800&q=80") center/cover;
+}
+
+.page-hero::after {
+  content: "";
+  position: absolute;
+  width: 480px;
+  height: 480px;
+  right: -160px;
+  bottom: -160px;
+  background: radial-gradient(circle, rgba(196, 154, 74, 0.34), transparent 66%);
+}
+
+.page-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) 390px;
+  gap: 56px;
+  align-items: center;
+  padding: 112px 0 96px;
+}
+
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -339,6 +368,20 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 18px;
+}
+
+.career-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.career-card {
+  min-height: 100%;
+}
+
+.compact-list {
+  margin-bottom: 0;
 }
 
 .service-card {
@@ -606,7 +649,9 @@ textarea:focus {
   }
 
   .hero-grid,
+  .page-hero-grid,
   .service-grid,
+  .career-grid,
   .feature-grid,
   .split-grid,
   .about-grid,
@@ -622,7 +667,8 @@ textarea:focus {
     padding: 78px 0;
   }
 
-  .service-grid {
+  .service-grid,
+  .career-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
@@ -644,6 +690,10 @@ textarea:focus {
     padding: 58px 0;
   }
 
+  .page-hero-grid {
+    padding: 62px 0;
+  }
+
   .hero-card,
   .contact-form,
   .service-card {
@@ -655,7 +705,8 @@ textarea:focus {
     padding: 72px 0;
   }
 
-  .service-grid {
+  .service-grid,
+  .career-grid {
     grid-template-columns: 1fr;
   }
 
