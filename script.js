@@ -6,6 +6,34 @@ if (year) {
   year.textContent = new Date().getFullYear();
 }
 
+document.querySelectorAll('a[href]').forEach((link) => {
+  const href = link.getAttribute('href');
+
+  if (!href || href.startsWith('mailto:') || href.startsWith('tel:')) {
+    return;
+  }
+
+  const isInternal = href.startsWith('#') || href.startsWith('/') || href.startsWith('index.html') || href.startsWith('careers.html');
+
+  if (isInternal) {
+    link.setAttribute('target', '_self');
+  }
+
+  if (href.startsWith('#')) {
+    link.addEventListener('click', (event) => {
+      const target = document.querySelector(href);
+
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', href);
+    });
+  }
+});
+
 if (navToggle && navLinks) {
   navToggle.addEventListener('click', () => {
     const isOpen = navLinks.classList.toggle('open');
