@@ -7,6 +7,8 @@ Static website for Betaway Holdings: real estate sales, management, leasing, and
 - `index.html` - main website page
 - `styles.css` - responsive styling
 - `script.js` - mobile navigation and footer year
+- `assets/logo.jpg` - primary logo
+- `assets/logo-dark.jpg` - dark-background logo version
 
 ## GitHub Pages Setup
 
