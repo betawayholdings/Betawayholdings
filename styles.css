@@ -67,6 +67,17 @@ img {
   letter-spacing: -0.02em;
 }
 
+
+.brand-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 14px;
+  background: var(--white);
+  padding: 5px;
+  box-shadow: 0 12px 28px rgba(16, 35, 55, 0.14);
+}
+
 .brand-mark {
   width: 44px;
   height: 44px;
@@ -547,6 +558,11 @@ textarea:focus {
 
 .footer-brand {
   color: var(--white);
+}
+
+.footer-brand .brand-logo {
+  width: 52px;
+  height: 52px;
 }
 
 .footer-links {
